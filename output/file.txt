@@ -1,0 +1,36 @@
+The total price of the taxi fleet: 59000 USD
+
+The list of taxi sorted according to fuel consumption:
+
+Car ID: 4
+Car price: 9000 USD
+Car consumption: 4.5 l/100km
+Car top speed: 190 km/hour
+
+Car ID: 1
+Car price: 10000 USD
+Car consumption: 7.1 l/100km
+Car top speed: 210 km/hour
+
+Car ID: 3
+Car price: 25000 USD
+Car consumption: 9.5 l/100km
+Car top speed: 250 km/hour
+
+Car ID: 2
+Car price: 15000 USD
+Car consumption: 13.7 l/100km
+Car top speed: 250 km/hour
+
+The list of taxi with the given top speed range (180 - 220 km/hour):
+
+Car ID: 1
+Car price: 10000 USD
+Car consumption: 7.1 l/100km
+Car top speed: 210 km/hour
+
+Car ID: 4
+Car price: 9000 USD
+Car consumption: 4.5 l/100km
+Car top speed: 190 km/hour
+
