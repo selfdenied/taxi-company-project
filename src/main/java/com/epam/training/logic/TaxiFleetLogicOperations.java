@@ -9,7 +9,7 @@ import com.epam.training.comparator.CarConsumptionComparator;
 import com.epam.training.exception.LogicInvalidInitializationException;
 import com.epam.training.taxifleet.TaxiFleet;
 
-/* the class containing some business logic (required by the task given) */
+/* the class containing some business logic (required by the task) */
 public class TaxiFleetLogicOperations {
 	private List<PassengerCar> taxiFleetList;
 
@@ -29,7 +29,7 @@ public class TaxiFleetLogicOperations {
 	}
 
 	/* here we get the sorted list of taxi depending on their fuel consumption */
-	public List<PassengerCar> obtainTaxiFleetSortedAccordingToConsumption() {
+	public List<PassengerCar> taxiFleetSortedAccordingToConsumption() {
 		List<PassengerCar> sortedList = new ArrayList<PassengerCar>();
 
 		sortedList.addAll(taxiFleetList);
@@ -38,7 +38,7 @@ public class TaxiFleetLogicOperations {
 	}
 
 	/* here we get a list of cars within the specified max speed range */
-	public List<PassengerCar> obtainCarsOfTheSpecificMaxSpeedRange(
+	public List<PassengerCar> carsOfTheSpecificMaxSpeedRange(
 			int minTopSpeed, int maxTopSpeed) {
 		List<PassengerCar> chosenCarsList = new ArrayList<PassengerCar>();
 
