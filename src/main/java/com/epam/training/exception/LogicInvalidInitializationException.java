@@ -4,12 +4,12 @@ package com.epam.training.exception;
 public class LogicInvalidInitializationException extends Exception {
 	private static final long serialVersionUID = 2L;
 	private String description;
-	
+
 	/* constructor with a description */
 	public LogicInvalidInitializationException(String description) {
 		this.description = description;
 	}
-	
+
 	public String getMessage() {
 		return description;
 	}

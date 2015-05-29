@@ -12,30 +12,30 @@ import com.epam.training.taxifleet.creator.TaxiFleetCreator;
 import com.epam.training.util.PrintReportManager;
 
 public class Runner {
-		final static Logger LOG = Logger.getLogger(Runner.class); // getting the logger reference
-		
-		/* initializing the logger configuration */
-		static {
-			new DOMConfigurator().doConfigure(Constants.LOGGER_CONFIG_FILE_PATH,
-					LogManager.getLoggerRepository());
+	/* getting the logger reference */
+	final static Logger LOG = Logger.getLogger(Runner.class);
+
+	/* initializing the logger configuration */
+	static {
+		new DOMConfigurator().doConfigure(Constants.LOGGER_CONFIG_FILE_PATH,
+				LogManager.getLoggerRepository());
+	}
+
+	public static void main(String[] args) {
+		/* needed to print a report */
+		PrintReportManager printReportManager = new PrintReportManager();
+		/* generates a taxi fleet */
+		TaxiFleet taxiFleet = new TaxiFleetCreator().receiveTaxiFleet();
+
+		try {
+			// initializing logic operations
+			TaxiFleetLogicOperations logic = new TaxiFleetLogicOperations(taxiFleet);
+			// printing a report into a file
+			printReportManager.printReport(logic);
+		} catch (LogicInvalidInitializationException exception) {
+			LOG.error("TaxiFleetLogic constructor does not accept 'null' values",
+					exception);
+			LOG.warn("The process of printing a report into a file has been aborted");
 		}
-		
-		public static void main(String[] args) {
-			PrintReportManager printReportManager = new PrintReportManager(); // needed to print a report
-			TaxiFleet taxiFleet = new TaxiFleetCreator().receiveTaxiFleet(); // generates a taxi fleet
-			
-			try {
-				// initializing logic operations
-				TaxiFleetLogicOperations logic = new TaxiFleetLogicOperations(taxiFleet);
-				if (!taxiFleet.isEmpty()) {
-					// printing a report into a file
-					printReportManager.printReport(logic);
-				} else {
-					LOG.warn(Constants.EMPTY_TAXI_FLEET_WARNING);
-				}
-			} catch (LogicInvalidInitializationException exception) {
-				LOG.error(Constants.TAXI_FLEET_LOGIC_ERROR, exception);
-				LOG.warn(Constants.OPERATION_ABORTED);
-			}
-		}
+	}
 }

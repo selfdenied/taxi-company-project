@@ -5,7 +5,6 @@ import org.apache.log4j.Logger;
 import com.epam.training.car.PassengerCar;
 import com.epam.training.car.engine.*;
 import com.epam.training.car.feature.*;
-import com.epam.training.constant.Constants;
 import com.epam.training.exception.IllegalSetValueException;
 import com.epam.training.taxifleet.TaxiFleet;
 import com.epam.training.taxifleet.factory.TaxiFactory;
@@ -14,7 +13,8 @@ import com.epam.training.taxifleet.factory.TaxiFactory;
  * some hard coding is introduced here
  */
 public class TaxiFleetCreator {
-	final static Logger LOG = Logger.getLogger(TaxiFleetCreator.class); // getting the logger reference
+	/* getting the logger reference */
+	final static Logger LOG = Logger.getLogger(TaxiFleetCreator.class);
 	private TaxiFleet taxiFleet = new TaxiFleet();
 	private TaxiFactory taxiFactory = new TaxiFactory();
 	private InternalCombustionEngine petrolEngine1;
@@ -29,9 +29,9 @@ public class TaxiFleetCreator {
 	/* returns the list filled with taxi cars */ 
 	public TaxiFleet receiveTaxiFleet() {
 		if (createTaxiFleet()) {
-			LOG.info(Constants.TAXI_FLEET_CREATED_INFO);
+			LOG.info("Taxi fleet has been successfully generated...");
 		} else {
-			LOG.warn(Constants.TAXI_FLEET_CREATION_WARN);
+			LOG.warn("Warning. No cars were added into the taxi fleet");
 		}
 		return taxiFleet;
 	}

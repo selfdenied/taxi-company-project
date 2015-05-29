@@ -12,30 +12,37 @@ import com.epam.training.logic.TaxiFleetLogicOperations;
 
 /* the class is responsible for printing reports on the basis of app's business logic */
 public class PrintReportManager {
-	final static Logger LOG = Logger.getLogger(PrintReportManager.class); // getting the logger reference
-	
+	/* getting the logger reference */
+	final static Logger LOG = Logger.getLogger(PrintReportManager.class);
+
 	public void printReport(TaxiFleetLogicOperations logic) {
 		PrintWriter writer = null;
 		// trying to open a file and write a report in it
 		try {
-			writer = new PrintWriter(Constants.OUTPUT_FILE_PATH, "UTF-8");
-			LOG.info(Constants.START_WRITING_MESSAGE);
-			writer.println(Constants.TOTAL_PRICE_MESSAGE + 
-					logic.calculateTaxiFleetTotalPrice() + Constants.USD);
-			writer.println(Constants.TAXI_LIST_MESSAGE);
-			writer.println(getTaxiListShortDescription(logic.getTaxiFleetSortedAccordingToConsumption()));
-			writer.println(Constants.CAR_SPEED_RANGE_MESSAGE);
-			writer.println(getTaxiListShortDescription(logic.getCarsOfTheSpecificMaxSpeedRange(180, 220)));
-			LOG.info(Constants.END_WRITING_MESSAGE);
+			if (!logic.getTaxiFleetList().isEmpty()) {
+				writer = new PrintWriter(Constants.OUTPUT_FILE_PATH, "UTF-8");
+				LOG.info("Writing into a file...");
+				writer.println(Constants.TOTAL_PRICE_MESSAGE
+						+ logic.calculateTaxiFleetTotalPrice() + Constants.USD);
+				writer.println(Constants.TAXI_LIST_MESSAGE);
+				writer.println(getTaxiListShortDescription(logic
+						.obtainTaxiFleetSortedAccordingToConsumption()));
+				writer.println(Constants.CAR_SPEED_RANGE_MESSAGE);
+				writer.println(getTaxiListShortDescription(logic
+						.obtainCarsOfTheSpecificMaxSpeedRange(180, 220)));
+				LOG.info("End of process...");
+			} else {
+				LOG.warn("Warning. Taxi fleet list is empty! Report printing is aborted");
+			}
 		} catch (IOException exception) {
-			LOG.error(Constants.WRITE_INTO_FILE_ERROR_MESSAGE, exception);
+			LOG.error("Error. Can't write into file!", exception);
 		} finally {
 			if (writer != null) {
-				writer.close(); 	// closing the stream
+				writer.close(); // closing the stream
 			}
 		}
 	}
-	
+
 	/* the method gives a short description of each car (taxi) in the list */
 	private String getTaxiListShortDescription(List<PassengerCar> taxiList) {
 		StringBuffer buffer = new StringBuffer();

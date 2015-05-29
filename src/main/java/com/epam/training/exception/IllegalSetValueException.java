@@ -4,12 +4,12 @@ package com.epam.training.exception;
 public class IllegalSetValueException extends Exception {
 	private static final long serialVersionUID = 1L;
 	private String description;
-	
+
 	/* constructor with a description */
 	public IllegalSetValueException(String description) {
 		this.description = description;
 	}
-	
+
 	public String getMessage() {
 		return description;
 	}
