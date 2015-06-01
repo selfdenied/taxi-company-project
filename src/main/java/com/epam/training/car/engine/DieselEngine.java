@@ -11,7 +11,7 @@ public class DieselEngine extends InternalCombustionEngine {
 		super(); // superclass constructor
 		setFuelType(FuelType.DIESEL);
 	}
-	
+
 	@Override
 	public String toString() {
 		return Constants.DIESEL_ENGINE_DESCRIPTION;

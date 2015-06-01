@@ -5,7 +5,7 @@ import com.epam.training.car.engine.*;
 import com.epam.training.car.feature.*;
 import com.epam.training.exception.IllegalSetValueException;
 
-/* the factory class (needed to handle exceptions that are invoked by Constructors */
+/* the factory class */
 public class TaxiFactory {
 
 	// get a petrol engine entity

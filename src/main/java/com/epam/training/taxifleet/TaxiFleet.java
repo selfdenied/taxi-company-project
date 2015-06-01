@@ -11,7 +11,7 @@ public class TaxiFleet {
 	private List<PassengerCar> taxiFleetList = new ArrayList<PassengerCar>();
 
 	/* getter and some delegate methods (to manage list operations) */
-	public List<PassengerCar> obtainTaxiFleetList() {
+	public List<PassengerCar> getTaxiFleetList() {
 		return Collections.unmodifiableList(taxiFleetList);
 	}
 

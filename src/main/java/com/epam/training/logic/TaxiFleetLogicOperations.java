@@ -28,7 +28,7 @@ public class TaxiFleetLogicOperations {
 		return totalPrice;
 	}
 
-	/* here we get the sorted list of taxi depending on their fuel consumption */
+	/* here we find the sorted list of taxi depending on their fuel consumption */
 	public List<PassengerCar> taxiFleetSortedAccordingToConsumption() {
 		List<PassengerCar> sortedList = new ArrayList<PassengerCar>();
 
@@ -37,7 +37,7 @@ public class TaxiFleetLogicOperations {
 		return sortedList;
 	}
 
-	/* here we get a list of cars within the specified max speed range */
+	/* here we find a list of cars within the specified max speed range */
 	public List<PassengerCar> carsOfTheSpecificMaxSpeedRange(
 			int minTopSpeed, int maxTopSpeed) {
 		List<PassengerCar> chosenCarsList = new ArrayList<PassengerCar>();
@@ -60,7 +60,7 @@ public class TaxiFleetLogicOperations {
 	public void setTaxiFleetList(TaxiFleet taxiFleet)
 			throws LogicInvalidInitializationException {
 		if (taxiFleet != null) {
-			this.taxiFleetList = taxiFleet.obtainTaxiFleetList();
+			this.taxiFleetList = taxiFleet.getTaxiFleetList();
 		} else {
 			throw new LogicInvalidInitializationException(
 					"Cannot accept a 'null' value. Enter a proper taxi fleet object");

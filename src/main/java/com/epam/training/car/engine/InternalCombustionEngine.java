@@ -87,7 +87,7 @@ public abstract class InternalCombustionEngine {
 
 	public void setFuelType(FuelType fuelType) throws IllegalSetValueException {
 		if (fuelType != null) {
-
+			this.fuelType = fuelType;
 		} else {
 			throw new IllegalSetValueException(
 					"Cannot accept a 'null' value. Enter a proper fuel type object");

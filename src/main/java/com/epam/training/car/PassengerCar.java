@@ -49,12 +49,12 @@ public abstract class PassengerCar {
 	}
 
 	public void setTopSpeed(int topSpeed) throws IllegalSetValueException {
-		if (topSpeed > Constants.MIN_TOP_SPEED
+		if (topSpeed >= Constants.MIN_TOP_SPEED
 				&& topSpeed <= Constants.MAX_TOP_SPEED) {
 			this.topSpeed = topSpeed;
 		} else {
 			throw new IllegalSetValueException(
-					"Car's top speed should be between 0 and 450 km/hour");
+					"Car's top speed should be between 50 and 450 km/hour");
 		}
 	}
 
@@ -128,13 +128,13 @@ public abstract class PassengerCar {
 
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append(Constants.CAR_ID_MESSAGE + carID);
-		buffer.append(Constants.CAR_PRICE_MESSAGE + carPrice + Constants.USD);
-		buffer.append(Constants.CAR_CONSUMPTION_MESSAGE + consumption
+		StringBuilder builder = new StringBuilder();
+		builder.append(Constants.CAR_ID_MESSAGE + carID);
+		builder.append(Constants.CAR_PRICE_MESSAGE + carPrice + Constants.USD);
+		builder.append(Constants.CAR_CONSUMPTION_MESSAGE + consumption
 				+ Constants.LITERS_PER_KM);
-		buffer.append(Constants.CAR_TOP_SPEED_MESSAGE + topSpeed
+		builder.append(Constants.CAR_TOP_SPEED_MESSAGE + topSpeed
 				+ Constants.KM_PER_HOUR);
-		return buffer.toString();
+		return builder.toString();
 	}
 }
