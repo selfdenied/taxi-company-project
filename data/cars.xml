@@ -1,64 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:cars xmlns:tns="http://www.example.org/cars" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<cars xmlns:tns="http://www.example.org/cars" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.example.org/cars cars.xsd ">
 
-	<tns:combustion-car>
-		<tns:id>c1110</tns:id>
-		<tns:price>10000</tns:price>
-		<tns:speed>225</tns:speed>
-		<tns:weight>1560</tns:weight>
-		<tns:consumption>7.1</tns:consumption>
-		<tns:bodystyle>Saloon</tns:bodystyle>
-		<tns:drive>RWD</tns:drive>
-		<tns:gearbox>Manual</tns:gearbox>
-		<tns:engine>
-			<tns:cylinders>4</tns:cylinders>
-			<tns:displacement>1781</tns:displacement>
-			<tns:power>170</tns:power>
-			<tns:torque>250</tns:torque>
-			<tns:turbo>true</tns:turbo>
-			<tns:fuel>Petrol</tns:fuel>
-		</tns:engine>
-	</tns:combustion-car>
+	<combustion-car id="c1110">
+		<price>10000</price>
+		<speed>225</speed>
+		<weight>1560</weight>
+		<consumption>7.1</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>RWD</drive>
+		<gearbox>Manual</gearbox>
+		<engine>
+			<cylinders>4</cylinders>
+			<displacement>1781</displacement>
+			<power>170</power>
+			<torque>250</torque>
+			<turbo>true</turbo>
+			<fuel>Petrol</fuel>
+		</engine>
+	</combustion-car>
 
-	<tns:electric-car>
-		<tns:id>c1344</tns:id>
-		<tns:price>40000</tns:price>
-		<tns:speed>200</tns:speed>
-		<tns:weight>2100</tns:weight>
-		<tns:consumption>0.7</tns:consumption>
-		<tns:bodystyle>Coupe</tns:bodystyle>
-		<tns:drive>AWD</tns:drive>
-		<tns:gearbox>Automatic</tns:gearbox>
-		<tns:engine>
-			<tns:power>450</tns:power>
-			<tns:torque>900</tns:torque>
-			<tns:fuel>Electricity</tns:fuel>
-		</tns:engine>
-	</tns:electric-car>
+	<electric-car id="c1344">
+		<price>40000</price>
+		<speed>200</speed>
+		<weight>2100</weight>
+		<consumption>0.7</consumption>
+		<bodystyle>Coupe</bodystyle>
+		<drive>AWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine>
+			<power>450</power>
+			<torque>900</torque>
+			<fuel>Electricity</fuel>
+		</engine>
+	</electric-car>
 
-	<tns:hybrid-car>
-		<tns:id>c2788</tns:id>
-		<tns:price>25000</tns:price>
-		<tns:speed>180</tns:speed>
-		<tns:weight>1720</tns:weight>
-		<tns:consumption>3.5</tns:consumption>
-		<tns:bodystyle>Hatchback</tns:bodystyle>
-		<tns:drive>FWD</tns:drive>
-		<tns:gearbox>Automatic</tns:gearbox>
-		<tns:main-engine>
-			<tns:cylinders>3</tns:cylinders>
-			<tns:displacement>1577</tns:displacement>
-			<tns:power>90</tns:power>
-			<tns:torque>210</tns:torque>
-			<tns:turbo>true</tns:turbo>
-			<tns:fuel>Diesel</tns:fuel>
-		</tns:main-engine>
-		<tns:additional-engine>
-			<tns:power>90</tns:power>
-			<tns:torque>150</tns:torque>
-			<tns:fuel>Electricity</tns:fuel>
-		</tns:additional-engine>
-	</tns:hybrid-car>
+	<hybrid-car id="c2788">
+		<price>25000</price>
+		<speed>180</speed>
+		<weight>1720</weight>
+		<consumption>3.5</consumption>
+		<bodystyle>Hatchback</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Automatic</gearbox>
+		<main-engine>
+			<cylinders>3</cylinders>
+			<displacement>1577</displacement>
+			<power>90</power>
+			<torque>210</torque>
+			<turbo>true</turbo>
+			<fuel>Diesel</fuel>
+		</main-engine>
+		<additional-engine>
+			<power>90</power>
+			<torque>150</torque>
+			<fuel>Electricity</fuel>
+		</additional-engine>
+	</hybrid-car>
 
-</tns:cars>
+</cars>
